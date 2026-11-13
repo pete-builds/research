@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+
+{% seo %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      {% if site.github.is_project_page %}
+        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+      {% endif %}
+      {% if site.show_downloads %}
+        <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
+        <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
+      {% endif %}
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+
+      <!-- Cayman v0.2.0 layout, unchanged except for this footer. -->
+      <footer class="site-footer" id="how-this-was-made">
+        <span class="site-footer-credits"><strong>How this content is made.</strong> Reports on this site are researched and written by Claude, Anthropic's AI model, working in Claude Code. AI research agents search the web and open every source they use. A claim stays in only if it links to a page that was actually read and says what the report says, and quoted text is checked against the source page itself. Before publication, a separate AI verification pass reads the finished report with no prior context, re-opens the cited sources, and flags anything unsupported or overstated. Those fixes are logged in each report's Update History. This is AI-generated research: check the linked source before relying on any detail.</span>
+        {% if site.github.is_project_page %}
+          <span class="site-footer-owner">Published by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a> from <a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a>. Hosted on <a href="https://pages.github.com">GitHub Pages</a>.</span>
+        {% endif %}
+      </footer>
+    </main>
+  </body>
+</html>
